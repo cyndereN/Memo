@@ -1,6 +1,7 @@
 {% extends "To_do/layout.html" %}
 
 {% block body %}
+<div class="main">
     <h1>To-do List</h1>
     <ul>
         {% for task in tasks %}
@@ -11,4 +12,5 @@
     </ul>
 
     <a href="{% url 'To_do:add' %}">Add a New Task</a>
+</div>
 {% endblock %}
