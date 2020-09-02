@@ -1,0 +1,21 @@
+{% extends "To_do/layout.html" %}
+
+{% block body %}
+<div class="main">
+    <h1>Topic: {{ topic }}</h1>
+    <ul>
+        {% for entry in entries %}
+        <li>
+            <p>{{ entry.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ entry.text|linebreaks }}</p>
+        </li>
+        {% empty %}
+        <li>
+            No Contents.
+        </li>
+        {% endfor %}
+    </ul>
+    <p></p>
+    <a href="{% url 'To_do:index' %}">View Topics</a>
+</div>
+{% endblock %}

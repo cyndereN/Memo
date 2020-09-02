@@ -1,0 +1,17 @@
+{% extends "To_do/layout.html" %}
+
+{% block body %}
+<div class="main">
+    <h1>To-do List</h1>
+    <ul>
+        {% for topic in topics %}
+            <li>
+                <a href="{% url 'To_do:topic' topic.id %}">{{ topic }}</a>
+            </li>
+            {% empty %}
+                <li>No Tasks.</li>
+            {% endfor %}
+        
+    </ul>
+</div>
+{% endblock %}
